@@ -1,0 +1,16 @@
+/* src/index.css */
+
+/* Import Star Wars-style font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+/* This single line imports Tailwind into your project.
+   Tailwind will generate utility classes like:
+   p-4, bg-white, text-xl, flex, etc.
+*/
+
+@import "tailwindcss";
+
+/* Apply Star Wars font globally */
+html, body, #root {
+  font-family: 'Audiowide', sans-serif;
+}
