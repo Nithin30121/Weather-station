@@ -11,4 +11,5 @@ export default defineConfig({
     react(),       // enables React fast refresh, JSX support
     tailwindcss(), // enables Tailwind processing
   ],
+  base: './Weather-station/', // ensures correct paths when building for production
 });
