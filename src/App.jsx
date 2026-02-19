@@ -87,7 +87,7 @@ export default function App() {
         className="fixed inset-0 w-screen h-screen object-cover z-0 scale-125"
       >
         {/* ✅ Put background.mp4 in /public */}
-        <source src="/background.mp4" type="video/mp4" />
+        <source src="background.mp4" type="video/mp4" />
       </video>
 
       {/* ✅ Background Audio - Plays Once */}
@@ -95,7 +95,7 @@ export default function App() {
         autoPlay
         className="fixed inset-0"
       >
-        <source src="/background.mp3" type="audio/mpeg" />
+        <source src="background.mp3" type="audio/mpeg" />
       </audio>
 
       {/* Overlay */}
