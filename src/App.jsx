@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { getCurrentWeather, searchLocations } from "./api/openMeteo";
 import WeatherCard from "./components/WeatherCard";
 
@@ -10,6 +10,16 @@ export default function App() {
   const [selected, setSelected] = useState(null);
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.log("Autoplay blocked:", error);
+      });
+    }
+  }, []);
 
   async function onSearch() {
     setError("");
@@ -69,11 +79,12 @@ export default function App() {
     <div className="relative min-h-screen">
       {/* ✅ Background Video - Looping */}
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
-        className="fixed inset-0 w-screen h-screen object-cover scale-120"
+        className="fixed inset-0 w-screen h-screen object-cover z-0 scale-125"
       >
         {/* ✅ Put background.mp4 in /public */}
         <source src="/background.mp4" type="video/mp4" />
